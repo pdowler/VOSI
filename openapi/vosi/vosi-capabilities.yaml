@@ -49,7 +49,7 @@ components:
                                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                             <capability standardID="ivo://ivoa.net/std/VOSI#capabilities">
                                 <interface xsi:type="vs:ParamHTTP" role="std">
-                                    <accessURL use="full">https://example.net/argus/capabilities</accessURL>
+                                    <accessURL use="full">https://example.net/tap-service/capabilities</accessURL>
                                 </interface>
                             </capability>
                             ...
