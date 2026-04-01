@@ -9,6 +9,7 @@ servers:
 tags:
     - name: VOSI Capabilities
     - name: VOSI Table Metadata
+    - name: VOSI Table Operations
 
 paths:
 # notes: this is how another service like TAP would include VOSI endpoints using 
@@ -19,6 +20,14 @@ paths:
     /tables/{name}:
         $ref: ./openapi/vosi/vosi-table.yaml
         #$ref: https://ivoa.net/std/VOSI/vosi-table.yaml
+
     /capabilities:
         $ref: ./openapi/vosi/vosi-capabilities.yaml
         #$ref: https://ivoa.net/std/VOSI/vosi-capabilities.yaml
+
+    /table-ops:
+        $ref: ./openapi/vosi/vosi-table-ops.yaml
+    /table-ops/{jobID}:
+        $ref: ./openapi/vosi/vosi-table-ops-job.yaml
+    /table-ops/{jobID}/phase:
+        $ref: ./openapi/vosi/vosi-table-ops-job-phase.yaml

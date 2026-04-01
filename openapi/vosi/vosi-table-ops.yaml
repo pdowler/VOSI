@@ -1,21 +1,23 @@
 get:
-    operationId: table-ops-job-list
+    operationId: vosi-table-ops-job-list
     tags:
-      - Table Operations
+      - VOSI Table Operations
     summary: list async table update jobs
     description: async job listing
     parameters:
     responses:
-        200:
+        '200':
             $ref: ../uws/uws-responses.yaml#/job-listing
-        401:
+        '401':
             $ref: ./vosi-std-responses.yaml#/not-authenticated
-        403:
+        '403':
             $ref: ./vosi-std-responses.yaml#/permission-denied
+        '404':
+            $ref: ./vosi-std-responses.yaml#/not-found
 post:
-    operationId: table-ops-job-create
+    operationId: vosi-table-ops-job-create
     tags:
-      - Table Operations
+      - VOSI Table Operations
     summary: create async table update job 
     description: TAP asynchronous table update (create UWS Job)
     parameters:
@@ -27,22 +29,35 @@ post:
               type: string
         - name: INDEX
           in: query
-          description: create index operation; value is a column name in the table
+          description: |
+            create index operation; value is a column name in the table
+            or a comma-separated list of columns
           required: false
           schema:
               type: string
+        - name: INDEX_TYPE
+          in: query
+          description: |
+            qualifier to create a specialised index: a value of long-lat 
+            requires 2 numeric columns which are used as longitude,latitude
+            pairs (spherical coordinates); a value of x-y requires 2 numeric
+            columns which are used as x,y pairs (cartesian coordinates)
+          required: false
+          schema:
+            type: string
+            enum: [long-lat,x-y]
         - name: UNIQUE
           in: query
-          description: qualifier for INDEX to create a unique index
+          description: qualifier to create a unique index
           required: false
           schema:
               type: boolean
     responses:
-        303:
+        '303':
             $ref: ../uws/uws-responses.yaml#/created
-        401:
+        '401':
             $ref: ./vosi-std-responses.yaml#/not-authenticated
-        403:
+        '403':
             $ref: ./vosi-std-responses.yaml#/permission-denied
-        404:
+        '404':
             $ref: ./vosi-std-responses.yaml#/not-found
