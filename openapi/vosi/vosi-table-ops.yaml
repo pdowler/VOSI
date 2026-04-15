@@ -37,13 +37,9 @@ post:
             create index operation; value is a column name in the table
             or a comma-separated list of columns; order matters
           required: true
-          # style: form (default), explode: false, and type: array
-          # means multiple values are in a comma separated list
-          explode: false
           schema:
-            type: array
-              items:
-                type: string
+            type: string
+            #pattern: ??
         - name: INDEX_TYPE
           in: query
           description: |
