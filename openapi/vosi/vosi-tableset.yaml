@@ -29,7 +29,7 @@ components:
             content:
                 text/xml:
                     schema:
-                        type: object
+                        type: string
                         xml:
                             name: tableset
                             prefix: vosi
