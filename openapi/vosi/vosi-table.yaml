@@ -119,21 +119,26 @@ components:
         tableDoc:
             description: metadata for the specified schema or table
             headers:
-                x-vosi-anon-read:
-                  description: flag indicating that the resource allows anonymous read
-                  required: false
-                  schema:
-                    type: boolean
-                x-vosi-group-read:
-                  description: a GMS group identifier indicating a group with read permission
-                  required: false
-                  schema:
-                    type: string
-                x-vosi-group-write:
-                  description: a GMS group identifier indicating a group with write permission
-                  required: false
-                  schema:
-                    type: string
+              x-vosi-owner:
+                description: identifier for the owner of the schema or table
+                required: false
+                schema:
+                  type: string
+              x-vosi-anon-read:
+                description: flag indicating that the resource allows anonymous read
+                required: false
+                schema:
+                  type: boolean
+              x-vosi-group-read:
+                description: a GMS group identifier indicating a group with read permission
+                required: false
+                schema:
+                  type: string
+              x-vosi-group-write:
+                description: a GMS group identifier indicating a group with write permission
+                required: false
+                schema:
+                  type: string
             content:
                 text/xml:
                     schema:
