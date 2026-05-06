@@ -137,12 +137,12 @@ components:
             content:
                 text/xml:
                     schema:
-                        type: object
-                        xml:
-                            name: table
-                            prefix: vosi
-                            namespace: http://www.ivoa.net/xml/VOSITables/v1.0
-                    example: |
+                      type: string
+                      xml:
+                        name: table
+                        prefix: vosi
+                        namespace: http://www.ivoa.net/xml/VOSITables/v1.0
+                      example: |
                         <vosi:table xmlns:vosi="http://www.ivoa.net/xml/VOSITables/v1.0"
                                 xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
                                 xmlns:vte="http://www.opencadc.org/xml/VOSITables-ext/v0.1"
@@ -170,18 +170,18 @@ components:
                               <description>recommended sort order when listing schemas</description>
                               <dataType xsi:type="vs:VOTableType">int</dataType>
                             </column>
-                          </vosi:table>
+                        </vosi:table>
                 application/x-votable+xml:
                     schema:
-                        type: object
-                        xml:
-                            name: VOTABLE
-                            namespace: http://www.ivoa.net/xml/VOTable/v1.3
-                    example: |
+                      type: string
+                      xml:
+                        name: VOTABLE
+                        namespace: http://www.ivoa.net/xml/VOTable/v1.3
+                      example: |
                         <VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
                                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4">
                             <RESOURCE type="results">
-                                <TABLE>
+                              <TABLE>
                                 <FIELD name="schema_name" datatype="char" arraysize="64*">
                                     <DESCRIPTION>schema name for reference to tap_schema.schemas</DESCRIPTION>
                                 </FIELD>
@@ -194,9 +194,6 @@ components:
                                 <FIELD name="schema_index" datatype="int">
                                     <DESCRIPTION>recommended sort order when listing schemas</DESCRIPTION>
                                 </FIELD>
-                                <!--data goes here-->
                               </TABLE>
                             </RESOURCE>
                         </VOTABLE>
-
-
