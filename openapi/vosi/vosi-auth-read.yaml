@@ -1,0 +1,8 @@
+# request header
+name: x-vosi-auth-read
+in: header
+description: flag indicating that the resource cannot be read with an anonymous request
+required: false
+schema:
+  type: boolean
+
