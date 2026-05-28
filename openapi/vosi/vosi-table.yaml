@@ -122,10 +122,11 @@ components:
             description: metadata for the specified schema or table
             headers:
               x-vosi-auth-read:
-                description: flag indicating that the resource allows anonymous read
+                description: flag indicating that the resource requires authentication to read
                 required: false
                 schema:
-                  type: boolean
+                  type: string
+                  enum: ["true", "false"]
               x-vosi-group-read:
                 description: a GMS group identifier indicating a group with read permission
                 required: false
